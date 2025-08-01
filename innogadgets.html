@@ -8,6 +8,39 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <style>
+        .carousel-item {
+            background: linear-gradient(120deg, #f8fafc 60%, #e0e7ef 100%);
+            border-radius: 24px;
+            padding: 32px 0;
+            margin: 0 8px;
+            min-height: 320px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .carousel-inner {
+            border-radius: 24px;
+            overflow: hidden;
+        }
+        .carousel-item .card {
+            margin: 0 12px;
+            box-shadow: 0 6px 24px rgba(44,83,100,0.10);
+            transition: transform 0.2s;
+        }
+        .carousel-item .card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 12px 32px rgba(44,83,100,0.18);
+        }
+        @media (max-width: 767.98px) {
+            .carousel-item {
+                flex-direction: column;
+                padding: 16px 0;
+                min-height: 0;
+            }
+            .carousel-item .card {
+                margin: 12px 0;
+            }
+        }
         body {
             background: linear-gradient(135deg, #0f2027, #2c5364);
             color: #fff;
@@ -110,33 +143,41 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div class="row justify-content-center">
-                        <div class="col-md-4">
-                            <div class="card" data-aos="zoom-in">
-                                <img src="https://via.placeholder.com/250x180?text=Phones" class="card-img-top" alt="Phones">
-                                <div class="card-body">
+                        <div class="col-md-4 d-flex align-items-stretch">
+                            <div class="card w-100 h-100" data-aos="zoom-in">
+                                <div class="d-flex justify-content-center flex-wrap mb-3">
+                                    <img src="https://pngimg.com/uploads/iphone_14/iphone_14_PNG21.png" alt="iPhone 14" style="height:60px;width:auto;margin:4px;" />
+                                </div>
+                                <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Phones</h5>
-                                    <p class="card-text">Experience the latest in mobile technology with our innovative smartphones.</p>
-                                    <a href="#" class="btn btn-primary">Buy Now</a>
+                                    <p class="card-text flex-grow-1">Experience the latest in mobile technology with our innovative smartphones.</p>
+                                    <a href="#" class="btn btn-primary mt-auto">Buy Now</a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 d-none d-md-block">
-                            <div class="card" data-aos="zoom-in" data-aos-delay="100">
-                                <img src="https://via.placeholder.com/250x180?text=Laptops" class="card-img-top" alt="Laptops">
-                                <div class="card-body">
+                        <div class="col-md-4 d-flex align-items-stretch">
+                            <div class="card w-100 h-100" data-aos="zoom-in" data-aos-delay="100">
+                                <div class="d-flex justify-content-center flex-wrap mb-3">
+                                    
+                                    <img src="https://via.placeholder.com/250x180?text=Laptops" alt="Laptops" style="height:60px;width:auto;margin:4px;" />
+                                </div>
+                                <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Laptops</h5>
-                                    <p class="card-text">Powerful and portable laptops for work, play, and everything in between.</p>
-                                    <a href="#" class="btn btn-primary">Buy Now</a>
+                                    <p class="card-text flex-grow-1">Powerful and portable laptops for work, play, and everything in between.</p>
+                                    <a href="#" class="btn btn-primary mt-auto">Buy Now</a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 d-none d-md-block">
-                            <div class="card" data-aos="zoom-in" data-aos-delay="200">
-                                <img src="https://via.placeholder.com/250x180?text=Smart+Watches" class="card-img-top" alt="Smart Watches">
-                                <div class="card-body">
+                        <div class="col-md-4 d-flex align-items-stretch">
+                            <div class="card w-100 h-100" data-aos="zoom-in" data-aos-delay="200">
+                                <div class="d-flex justify-content-center flex-wrap mb-3">
+                                    
+                                    <img src="https://via.placeholder.com/250x180?text=Smart+Watches" alt="Smart Watches" style="height:60px;width:auto;margin:4px;" />
+                                </div>
+                                <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Smart Watches</h5>
-                                    <p class="card-text">Stay connected and track your fitness with our smart watches.</p>
-                                    <a href="#" class="btn btn-primary">Buy Now</a>
+                                    <p class="card-text flex-grow-1">Stay connected and track your fitness with our smart watches.</p>
+                                    <a href="#" class="btn btn-primary mt-auto">Buy Now</a>
                                 </div>
                             </div>
                         </div>
@@ -152,12 +193,12 @@
             </a>
         </div>
     </div>
-        <section class="container order-section" id="order" data-aos="fade-right">
+    <section class="container order-section" id="order" data-aos="fade-right">
         <h3><i class="bi bi-cart-check"></i> Place Your Order</h3>
         <form>
             <div class="form-group">
                 <label for="productSelect">Select Product</label>
-                <select class="form-control" id="productSelect" required>
+                <select class="form-control fancy-input" id="productSelect" required>
                     <option value="">Choose...</option>
                     <option>Phones - 180k above</option>
                     <option>Laptops - 450k above</option>
@@ -166,15 +207,15 @@
             </div>
             <div class="form-group">
                 <label for="orderName">Your Name</label>
-                <input type="text" class="form-control" id="orderName" placeholder="Enter your name" required>
+                <input type="text" class="form-control fancy-input" id="orderName" placeholder="Enter your name" required>
             </div>
             <div class="form-group">
                 <label for="orderEmail">Email address</label>
-                <input type="email" class="form-control" id="orderEmail" placeholder="Enter email" required>
+                <input type="email" class="form-control fancy-input" id="orderEmail" placeholder="Enter email" required>
             </div>
             <div class="form-group">
                 <label for="orderAddress">Shipping Address</label>
-                <textarea class="form-control" id="orderAddress" rows="2" required></textarea>
+                <textarea class="form-control fancy-input" id="orderAddress" rows="2" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Submit Order</button>
         </form>
@@ -185,15 +226,15 @@
         <form>
             <div class="form-group">
                 <label for="contactName">Your Name</label>
-                <input type="text" class="form-control" id="contactName" placeholder="Enter your name" required>
+                <input type="text" class="form-control fancy-input" id="contactName" placeholder="Enter your name" required>
             </div>
             <div class="form-group">
                 <label for="contactEmail">Email address</label>
-                <input type="email" class="form-control" id="contactEmail" placeholder="Enter email" required>
+                <input type="email" class="form-control fancy-input" id="contactEmail" placeholder="Enter email" required>
             </div>
             <div class="form-group">
                 <label for="contactMessage">Message</label>
-                <textarea class="form-control" id="contactMessage" rows="3" required></textarea>
+                <textarea class="form-control fancy-input" id="contactMessage" rows="3" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Send Message</button>
         </form>
@@ -207,30 +248,30 @@
     <section class="container mb-5" id="prices" data-aos="fade-up">
         <h2 class="text-center mb-4">Product Prices</h2>
         <div class="row justify-content-center">
-            <div class="col-md-4 mb-3">
-                <div class="card text-center">
-                    <div class="card-body">
+            <div class="col-md-4 mb-3 d-flex align-items-stretch">
+                <div class="card text-center w-100 h-100">
+                    <div class="card-body d-flex flex-column">
                         <h5 class="card-title">Phones</h5>
                         <div class="card-price">180k and above</div>
-                        <p class="card-text">Latest smartphones with advanced features and UK used.</p>
+                        <p class="card-text flex-grow-1">Latest smartphones with advanced features and UK used.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-3">
-                <div class="card text-center">
-                    <div class="card-body">
+            <div class="col-md-4 mb-3 d-flex align-items-stretch">
+                <div class="card text-center w-100 h-100">
+                    <div class="card-body d-flex flex-column">
                         <h5 class="card-title">Laptops</h5>
                         <div class="card-price">450k and above</div>
-                        <p class="card-text">High-performance laptops for all your needs and also refurblished laptops.</p>
+                        <p class="card-text flex-grow-1">High-performance laptops for all your needs and also refurblished laptops.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-3">
-                <div class="card text-center">
-                    <div class="card-body">
+            <div class="col-md-4 mb-3 d-flex align-items-stretch">
+                <div class="card text-center w-100 h-100">
+                    <div class="card-body d-flex flex-column">
                         <h5 class="card-title">Smart Watches</h5>
                         <div class="card-price">70k and above</div>
-                        <p class="card-text">Smart watches to keep you connected and healthy.</p>
+                        <p class="card-text flex-grow-1">Smart watches to keep you connected and healthy.</p>
                     </div>
                 </div>
             </div>
@@ -239,6 +280,66 @@
     <footer>
         &copy; 2025 Innogadgets. All rights reserved.
     </footer>
+    <style>
+        .fancy-input {
+            background: linear-gradient(120deg, #f8fafc 60%, #e0e7ef 100%);
+            border: 2px solid #26d0ce;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(44,83,100,0.08);
+            padding: 12px 16px;
+            font-size: 1.1rem;
+            color: #1a2980;
+            transition: border 0.2s, box-shadow 0.2s;
+            outline: none;
+        }
+        .fancy-input:focus {
+            border: 2px solid #1a2980;
+            box-shadow: 0 4px 24px rgba(38,208,206,0.18);
+            background: linear-gradient(120deg, #e0e7ef 60%, #f8fafc 100%);
+            color: #222;
+        }
+        .fancy-input::placeholder {
+            color: #8fa1b3;
+            opacity: 1;
+            font-style: italic;
+        }
+        select.fancy-input {
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,<svg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M5 8L10 13L15 8' stroke='%231a2980' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1.2em;
+            padding-right: 2.5em;
+        }
+        textarea.fancy-input {
+            min-height: 80px;
+            resize: vertical;
+        }
+        /* Equal card heights and margins for product and price cards */
+        .carousel-item .card,
+        #prices .card {
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .carousel-item .card-body,
+        #prices .card-body {
+            flex: 1 1 auto;
+            display: flex;
+            flex-direction: column;
+        }
+        .carousel-item .card,
+        #prices .card {
+            margin: 0 8px;
+        }
+        @media (max-width: 767.98px) {
+            .carousel-item .card,
+            #prices .card {
+                margin: 12px 0;
+            }
+        }
+    </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -247,115 +348,21 @@
         AOS.init();
     </script>
     <script>
+        AOS.init();
         $(document).ready(function() {
             $('.carousel').carousel({
-                interval: 5000
+                interval: 5000,
+                pause: "hover",
+                wrap: true,
+                ride: "carousel",
+                touch: true,
+                keyboard: true
             });
-        });
-    </script>
-    <script>
-        $(function() {
             $('[data-toggle="tooltip"]').tooltip();
-        });
-    </script>
-</script>
-    <script>
-        $(document).ready(function() {
             $('.navbar-toggler').click(function() {
                 $(this).toggleClass('active');
             });
         });
-    </script>
-    <script>
-        $(document).ready(function() {
-            $('.carousel').carousel({
-                interval: 3000
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
-            $('.carousel').carousel({
-                pause: "hover"
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
-            $('.carousel').carousel({
-                wrap: true
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
-            $('.carousel').carousel({
-                ride: "carousel"
-            });
-        }); 
-    </script>
-    <script>
-        $(document).ready(function() {
-            $('.carousel').carousel({
-                touch: true
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
-            $('.carousel').carousel({
-                keyboard: true
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
-            $('.carousel').carousel({
-                pause: "false"
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
-            $('.carousel').carousel({
-                interval: 2000
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
-            $('.carousel').carousel({
-                ride: "false"
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
-            $('.carousel').carousel({
-                wrap: false
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
-            $('.carousel').carousel({
-                touch: false
-            });
-        }); 
-    </script>
-    <script>
-        $(document).ready(function() {
-            $('.carousel').carousel({
-                keyboard: false
-            });
-        }); 
-    </script>
-    <script>
-        $(document).ready(function() {
-            $('.carousel').carousel({
-                pause: "hover"
-            });
-        }); 
     </script>
 </body>
 </html>
